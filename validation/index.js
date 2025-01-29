@@ -48,17 +48,17 @@ export const ticketIdSchema = z.object({
 });
 
 export const orderSchema = z.object({
-  user: z.string().length(24, { message: "Invalid user ID format. Must be 24 characters long." }), // MongoDB ObjectId'ga mos uzunlik
+  user: z.string().length(24), 
   tickets: z
     .array(
       z.object({
-        ticket: z.string().length(24, { message: "Invalid ticket ID format. Must be 24 characters long." }), // MongoDB ObjectId'ga mos
-        quantity: z.number().min(1, { message: "Quantity must be at least 1." }),
-        price: z.number().positive({ message: "Price must be a positive number." }),
+        ticket: z.string().length(24), 
+        quantity: z.number().min(1),
+        price: z.number().positive(),
       })
     )
-    .min(1, { message: "At least one ticket is required." }),
-  totalPrice: z.number().positive({ message: "Total price must be a positive number." }),
-  paymentMethod: z.enum(["stripe", "paypal", "cash"], { message: "Invalid payment method." }),
-  status: z.enum(["pending", "paid", "cancelled"], { message: "Invalid status value." }),
+    .min(1),
+  totalPrice: z.number().positive(),
+  paymentMethod: z.enum(["stripe", "paypal", "cash"]),
+  status: z.enum(["pending", "paid", "cancelled"]),
 });
