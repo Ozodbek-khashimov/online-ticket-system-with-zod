@@ -1,5 +1,6 @@
 import { User } from "../models/index.js";
-
+import jwtService from "../service/jwt.service.js"
+const { UserJwt } = jwtService;
 export const authController = {
     async register(req, res, next) {
         try {
@@ -7,29 +8,47 @@ export const authController = {
 
             if (!email || !username || !password) {
                 throw new Error('Username, Email, and password are required');
+
+            }
+            const oldUser = await User.findOne({ email })
+            if (oldUser) {
+                return res.status(400).send({ message: "user olready exists" })
             }
 
-            const user = new User({
+
+            const user = await User.create({
                 email,
                 username,
                 password,
-            });
+            })
+            console.log(user);
+            
+            // const user = new User({
+            //     email,
+            //     username,
+            //     password,
+            // });
 
-            await user.save();
+            // await user.save();
+            const payload = {
+                id: user._id,
+                email: user.email,
+                role: "user"
+            }
+
+            const tokens = await UserJwt.generateTokens(payload)
+
 
             res.status(201).json({
                 message: 'User registered successfully',
                 user: {
+                    id:user._id,
                     username: user.username,
                     email: user.email,
                     role: user.role,
                 },
             });
         } catch (error) {
-            if (error.code === 11000) {
-                res.status(400).json({ message: 'User already exists' });
-                return;
-            }
             next(error);
         }
     },
@@ -68,18 +87,16 @@ export const authController = {
     },
     async profile(req, res, next) {
         try {
-          if (req.user) {
-            res.json(req.user); 
-          } else {
-            return res.status(404).json({ error: 'User not found' });
-          }
+            const users = await User.find()
+            return res.status(200).send(users)
+
         } catch (error) {
-          next(error); 
+            next(error);
         }
-      },
-      
-      
-    
+    },
+
+
+
 
     async logout(req, res, next) {
         try {

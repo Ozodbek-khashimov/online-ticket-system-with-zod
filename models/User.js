@@ -1,5 +1,6 @@
 import { Schema, model } from 'mongoose';
 import { genSalt, hash, compare } from 'bcrypt';
+import {v4} from "uuid"
 
 const userSchema = new Schema(
   {

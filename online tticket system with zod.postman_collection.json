@@ -29,8 +29,17 @@
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"Jossasdasdchssdfn\",\n    \"password\": \"password\",\n    \"email\":\"johbssdfvsdnzxscbasv@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:7777/api/auth/profile/",
+							"raw": "http://localhost:7777/api/auth/profile",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -39,8 +48,7 @@
 							"path": [
 								"api",
 								"auth",
-								"profile",
-								""
+								"profile"
 							]
 						},
 						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
@@ -65,11 +73,21 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTI0NWNmMzFmYTUzNWQ1NTRkYzE0ZSIsImlhdCI6MTczNzYzOTM3NSwiZXhwIjoxNzQwMjMxMzc1fQ.644SL2osJWcXVjKEoSceBrU_uGgdbAb1rSmqwfbvkoM",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"username\": \"dfsdfdd\",\n    \"password\":\"23dsdfdrew\",\n    \"email\":\"adfgd@gmfvail.com\"\n}",
+							"raw": "{\n\t\"username\": \"Josaasasdasdchssdfn\",\n    \"password\": \"password\",\n    \"email\":\"johbssdfvasdnzxascbasv@gmail.com\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -111,11 +129,21 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTM3MWFhNWNkZGEyZTI0NzM3NTQ5YSIsImlhdCI6MTczODc2NDcxNCwiZXhwIjoxNzM4NzY4MzE0fQ.5nNz3w6FdxKzyK-FzaZb8Hgv_PgWPXmbtl9VessxMU4",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"username\": \"dfsdfdd\",\n    \"password\":\"23dsdfdrew\",\n    \"email\":\"adfgd@gmfvail.com\"\n}",
+							"raw": "{\n\t\"username\": \"Jossasdasdchssdfn\",\n    \"password\": \"password\",\n    \"email\":\"johbssdfvsdnzxscbasv@gmail.com\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -258,7 +286,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:7777/api/ticket/6798af15938ea934be26d3dd",
+							"raw": "http://localhost:7777/api/ticket/67a5b82566ca86a491649513",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -267,7 +295,7 @@
 							"path": [
 								"api",
 								"ticket",
-								"6798af15938ea934be26d3dd"
+								"67a5b82566ca86a491649513"
 							]
 						},
 						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
@@ -292,6 +320,16 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTM3MWFhNWNkZGEyZTI0NzM3NTQ5YSIsImlhdCI6MTczODc2NDcxNCwiZXhwIjoxNzM4NzY4MzE0fQ.5nNz3w6FdxKzyK-FzaZb8Hgv_PgWPXmbtl9VessxMU4",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -350,7 +388,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:7777/api/ticket/6798af15938ea934be26d3dd",
+							"raw": "http://localhost:7777/api/ticket/67a5b82566ca86a491649513",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -359,7 +397,7 @@
 							"path": [
 								"api",
 								"ticket",
-								"6798af15938ea934be26d3dd"
+								"67a5b82566ca86a491649513"
 							]
 						},
 						"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
@@ -396,7 +434,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:7777/api/ticket/6798af15938ea934be26d3dd",
+							"raw": "http://localhost:7777/api/ticket/67a5b82566ca86a491649513",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -405,7 +443,7 @@
 							"path": [
 								"api",
 								"ticket",
-								"6798af15938ea934be26d3dd"
+								"67a5b82566ca86a491649513"
 							]
 						},
 						"description": "This is a DELETE request, and it is used to delete data that was previously created via a POST request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful DELETE request typically returns a `200 OK`, `202 Accepted`, or `204 No Content` response code."
@@ -436,8 +474,17 @@
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:7777/api/order/6798af96938ea934be26d3e8",
+							"raw": "http://localhost:7777/api/order/67a5ba03ebcfa449e59c5f10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -446,7 +493,43 @@
 							"path": [
 								"api",
 								"order",
-								"6798af96938ea934be26d3e8"
+								"67a5ba03ebcfa449e59c5f10"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "Get data Copy 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7777/api/order/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"api",
+								"order",
+								""
 							]
 						},
 						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
@@ -465,7 +548,8 @@
 									"});",
 									""
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -474,7 +558,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Add your name in the body\"\n}",
+							"raw": "{\n  \"user\": \"67a5b9ebebcfa449e59c5f0c\",  \n  \"tickets\": [\n    {\n      \"ticket\": \"67a5b82566ca86a491649513\",  \n      \"quantity\": 2,\n      \"price\": 50\n    }\n  ],\n  \"totalPrice\": 200,\n  \"paymentMethod\": \"stripe\",\n  \"status\": \"pending\"\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -482,12 +566,16 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/info",
+							"raw": "http://localhost:7777/api/order/register",
+							"protocol": "http",
 							"host": [
-								"{{base_url}}"
+								"localhost"
 							],
+							"port": "7777",
 							"path": [
-								"info"
+								"api",
+								"order",
+								"register"
 							]
 						},
 						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
@@ -524,7 +612,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:7777/api/order/6798af96938ea934be26d3e8",
+							"raw": "http://localhost:7777/api/order/67a5ba03ebcfa449e59c5f10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -533,7 +621,7 @@
 							"path": [
 								"api",
 								"order",
-								"6798af96938ea934be26d3e8"
+								"67a5ba03ebcfa449e59c5f10"
 							]
 						},
 						"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."

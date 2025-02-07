@@ -14,7 +14,11 @@ orderRouter.post(
   orderController.create,
 );
 
-orderRouter.get("/", orderController.getAll);
+orderRouter.get(
+  "/", 
+  validateData(orderSchema),
+  orderController.getAll
+);
 orderRouter.get("/:id", orderController.getById);
 // orderRouter.post("/", orderController.create);
 orderRouter.put("/:id", orderController.update);
